@@ -13,7 +13,7 @@ npm install stringtree
 ```
 
 ## Examples
-```nodejs
+```javascript
 const { StringTree } = require('stringtree')
 
 var st = new StringTree()
