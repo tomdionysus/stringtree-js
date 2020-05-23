@@ -87,6 +87,24 @@ describe('StringTree', () => {
       expect(x1.get('spear')).toEqual(60)
     })
 
+    it('should not clear non-existent key', () => {
+      x1.set('library', 10)
+      x1.set('concentrate', 20)
+      x1.set('libation', 30)
+      x1.set('reward', 40)
+      x1.set('spotted', 50)
+      x1.set('spear', 60)
+
+      x1.clear('speared')
+
+      expect(x1.get('library')).toEqual(10)
+      expect(x1.get('concentrate')).toEqual(20)
+      expect(x1.get('libation')).toEqual(30)
+      expect(x1.get('reward')).toEqual(40)
+      expect(x1.get('spotted')).toEqual(50)
+      expect(x1.get('spear')).toEqual(60)
+    })
+
     it('should prune tree', () => {
       x1.set('beat', 20)
       x1.set('be', 10)
