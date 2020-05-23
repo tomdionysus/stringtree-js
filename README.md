@@ -9,7 +9,7 @@ stringtree is a package to enable fast, forward only parsing of text, partial ma
 
 ## Installation
 ```bash
-npm install stringtree
+npm install stringtree-js
 ```
 
 ## Examples

@@ -1,5 +1,5 @@
 {
-  "name": "stringtree",
+  "name": "stringtree-js",
   "version": "0.0.1",
   "description": "stringtree builds a prefix trees from keys/values",
   "main": "index.js",
