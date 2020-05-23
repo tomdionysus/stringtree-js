@@ -1,6 +1,6 @@
 {
   "name": "stringtree-js",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "stringtree builds a prefix trees from keys/values",
   "main": "index.js",
   "scripts": {

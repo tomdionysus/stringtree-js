@@ -23,6 +23,8 @@ describe('StringTree', () => {
       x1.set('reward', 40)
       x1.set('spotted', 50)
       x1.set('spear', 60)
+      x1.set('Struck', 70)
+      x1.set('SPEAR', 80)
     })
 
     it('should return correct nodes', () => {
@@ -44,10 +46,39 @@ describe('StringTree', () => {
       expect(n.v).toEqual(30)
     })
 
-    it('should return correct nodes', () => {
-      var { n, l } = x1.getNode('rewarded')
-      expect(n).toBeNull()
-      expect(l.v).toEqual(40)
+    it('should respect case', () => {
+      var { n, l } = x1.getNode('SPEAR')
+      expect(n.v).toEqual(80)
+    })
+
+    it('should respect uppercase', () => {
+      var { n, l } = x1.getNode('spear')
+      expect(n.v).toEqual(60)
+    })
+  })
+
+  describe('getNode (ignoreCase)', () => {
+    beforeEach(() => {
+      x1.ignoreCase = true
+
+      x1.set('library', 10)
+      x1.set('concentrate', 20)
+      x1.set('libation', 30)
+      x1.set('reward', 40)
+      x1.set('spotted', 50)
+      x1.set('spear', 60)
+      x1.set('Struck', 70)
+      x1.set('SPEAR', 80)
+    })
+
+    it('should respect case', () => {
+      var { n, l } = x1.getNode('SPEAR')
+      expect(n.v).toEqual(80)
+    })
+
+    it('should respect uppercase', () => {
+      var { n, l } = x1.getNode('spear')
+      expect(n.v).toEqual(80)
     })
   })
 
@@ -148,6 +179,24 @@ describe('StringTree', () => {
       expect(x1.prefix('l')).toEqual({ library: 10, libation: 30 })
       expect(x1.prefix('spo')).toEqual({ spotted: 50 })
       expect(x1.prefix('sp')).toEqual({ spotted: 50, spear: 60 })
+    })
+  })
+
+  describe('prefix (ignoreCase)', () => {
+    it('should return all possible values with prefix', () => {
+      x1.ignoreCase = true
+
+      x1.set('library', 10)
+      x1.set('concentrate', 20)
+      x1.set('libation', 30)
+      x1.set('reward', 40)
+      x1.set('spotted', 50)
+      x1.set('spear', 60)
+
+      expect(x1.prefix('x')).toEqual({})
+      expect(x1.prefix('l')).toEqual({ library: 10, libation: 30 })
+      expect(x1.prefix('SPO')).toEqual({ spotted: 50 })
+      expect(x1.prefix('SP')).toEqual({ spotted: 50, spear: 60 })
     })
   })
 
