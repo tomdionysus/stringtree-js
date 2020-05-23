@@ -1,7 +1,7 @@
 {
   "name": "stringtree",
   "version": "0.0.1",
-  "description": "",
+  "description": "stringtree builds a prefix trees from keys/values",
   "main": "index.js",
   "scripts": {
     "test": "node node_modules/nyc/bin/nyc.js --reporter=lcov --exclude=spec node_modules/jasmine/bin/jasmine.js && nyc report --reporter=text-lcov | coveralls",

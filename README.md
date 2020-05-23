@@ -4,7 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/tomdionysus/stringtree-js/badge.svg?branch=master)](https://coveralls.io/github/tomdionysus/stringtree-js?branch=master)
 [![NPM version](https://img.shields.io/npm/v/stringtree.svg)](https://www.npmjs.com/package/stringtree)
 
-stringtree is a library to enable fast, forward only parsing of text, partial matches, typeahead search, and other functionality by building a prefix tree or *trie* from a set of key/value pairs.
+stringtree is a package to enable fast, forward only parsing of text, partial matches, typeahead search, and other functionality by building a prefix tree or *trie* from a set of key/value pairs.
 
 
 ## Installation
