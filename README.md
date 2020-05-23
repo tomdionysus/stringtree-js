@@ -30,12 +30,11 @@ st.set('expectation',70)
 
 // Simple Search
 console.log('fisherman',st.get('fisherman'))
+// > fisherman 30
 
 // Prefix Search (typeahead)
-console.log('fish >',st.prefix('fish'))
-console.log('exp >',st.prefix('exp'))
-
-// Partial Search
-console.log('expectations <',st.partial('expectations'))
-
+console.log('fish',st.prefix('fish'))
+console.log('exp',st.prefix('exp'))
+// > fish { fisherman: 30 }
+// > exp { expect: 20, expected: 60, expectation: 70 }
 ```
