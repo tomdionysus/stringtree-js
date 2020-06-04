@@ -47,12 +47,12 @@ describe('StringTree', () => {
     })
 
     it('should respect case', () => {
-      var { n, l } = x1.getNode('SPEAR')
+      var { n } = x1.getNode('SPEAR')
       expect(n.v).toEqual(80)
     })
 
     it('should respect uppercase', () => {
-      var { n, l } = x1.getNode('spear')
+      var { n } = x1.getNode('spear')
       expect(n.v).toEqual(60)
     })
   })
@@ -72,12 +72,12 @@ describe('StringTree', () => {
     })
 
     it('should respect case', () => {
-      var { n, l } = x1.getNode('SPEAR')
+      var { n } = x1.getNode('SPEAR')
       expect(n.v).toEqual(80)
     })
 
     it('should respect uppercase', () => {
-      var { n, l } = x1.getNode('spear')
+      var { n } = x1.getNode('spear')
       expect(n.v).toEqual(80)
     })
   })
@@ -200,8 +200,8 @@ describe('StringTree', () => {
     })
   })
 
-  describe('tokenise', () => {
-    it('should tokenise input text', () => {
+  describe('parse', () => {
+    it('should parse input text', () => {
       x1.set('library', 10)
       x1.set('concentrate', 20)
       x1.set('libation', 30)
@@ -209,10 +209,10 @@ describe('StringTree', () => {
       x1.set('spotted', 50)
       x1.set('spear', 60)
 
-      expect(x1.prefix('x')).toEqual({})
-      expect(x1.prefix('l')).toEqual({ library: 10, libation: 30 })
-      expect(x1.prefix('spo')).toEqual({ spotted: 50 })
-      expect(x1.prefix('sp')).toEqual({ spotted: 50, spear: 60 })
+      expect(x1.parse('The library is late')).toEqual({ offset: 0, value: null })
+      expect(x1.parse('library is late')).toEqual({ offset: 7, value: 10 })
+      expect(x1.parse('library spotted', 8)).toEqual({ offset: 15, value: 50 })
+      expect(x1.parse('library spotted', 8, 12)).toEqual({ offset: 12, value: null })
     })
   })
 })

@@ -1,3 +1,3 @@
 module.exports = {
-	StringTree: require('./lib/StringTree')
+  StringTree: require('./lib/StringTree')
 }
