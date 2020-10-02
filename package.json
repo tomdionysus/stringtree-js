@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "description": "stringtree builds a prefix trees from keys/values",
   "main": "index.js",
+  "types": "stringtree-js.d.ts",
   "scripts": {
     "test": "node node_modules/nyc/bin/nyc.js --reporter=lcov --exclude=spec node_modules/jasmine/bin/jasmine.js && nyc report --reporter=text-lcov | coveralls",
     "gendocs": "node node_modules/jsdoc/jsdoc.js lib lib/jsdoc README.md -c .jsdoc.js -d docs"
